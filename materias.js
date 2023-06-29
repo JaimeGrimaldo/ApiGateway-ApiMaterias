@@ -8,6 +8,18 @@ app.get("/materia", (req, res,next) => {
     ])
 });
 
+app.post("/materiaPost/:nombre",(req, res,next) => {
+    try {
+        const nombre = req.params.nombre;
+        return res.json({
+            materia:nombre
+        })
+    } catch (error) {
+        console.log("Esto fallo: ", error)
+    }
+
+})
+
 app.listen(3000,()=>{
     console.log("> Api de materias funcionando.")
 });
